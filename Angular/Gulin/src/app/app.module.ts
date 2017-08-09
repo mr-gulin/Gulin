@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {AppRoutingModule} from './app-routing.module';
+import {MainModule} from './modules/main/main.module';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import {AppRoutingModule} from './app-routing.module';
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MainModule
+
   ],
   exports: [
   ],

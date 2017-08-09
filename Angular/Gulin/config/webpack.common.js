@@ -14,6 +14,7 @@ module.exports = {
     extensions: ['.ts', '.js']
   },
 
+
   module: {
     rules: [
       {
@@ -21,8 +22,10 @@ module.exports = {
         loaders: [
           {
             loader: 'awesome-typescript-loader',
-            options: { configFileName: helpers.root('tsconfig.json') }
-          } , 'angular2-template-loader'
+            options: {configFileName: helpers.root('tsconfig.json')}
+          },
+          'angular2-template-loader',
+          'angular2-router-loader'
         ]
       },
       {
@@ -36,14 +39,18 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+        loader: ExtractTextPlugin.extract({fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap'})
       },
       {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
         loader: 'raw-loader'
       }
+    ],
+    loaders: [
+
     ]
+
   },
 
   plugins: [

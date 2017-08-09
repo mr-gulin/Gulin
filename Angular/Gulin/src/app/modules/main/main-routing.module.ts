@@ -1,11 +1,10 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {MainComponent} from './main.component';
 import {RouterModule, Routes} from '@angular/router';
-import {CommonModule} from '@angular/common';
+import {MainComponent} from './main.component';
 
 export const routes: Routes = [
-  {path: '', component: MainComponent}
+  {path: '', redirectTo: '/main', pathMatch: 'full'},
+  {path: 'main', component: MainComponent}
 ]
 
 @NgModule({
@@ -13,12 +12,9 @@ export const routes: Routes = [
     MainComponent
   ],
   imports: [
-    BrowserModule,
-    CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
   exports: [
-    MainComponent,
     RouterModule
   ],
   providers: []
