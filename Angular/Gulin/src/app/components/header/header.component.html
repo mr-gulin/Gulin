@@ -1,7 +1,9 @@
 <md-toolbar color="primary">
-  <button md-icon-button>
-    <md-icon>menu</md-icon>
-  </button>
-  <span>Custom Toolbar</span>
+    <div class="toolbar">
+        <div class="title">{{rootScope.$mainProjectTitle}}</div>
+        <div class="buttons">
+            <button md-button *ngFor="let button of buttons" (click)="click()">{{button.caption}}</button>
+        </div>
+    </div>
 </md-toolbar>
 <!--<md-icon>home</md-icon>-->
